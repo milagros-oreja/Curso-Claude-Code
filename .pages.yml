@@ -1,0 +1,51 @@
+media:
+  input: src/img
+  output: /img
+
+content:
+  - name: articulos
+    label: Artículos
+    type: collection
+    path: src/articulos
+    filename: '{fields.title}.md'
+    view:
+      fields:
+        - title
+        - date
+        - categoria
+    fields:
+      - name: title
+        label: Título del artículo
+        type: string
+      - name: description
+        label: Resumen (1–2 frases · aparece en Google y al compartir)
+        type: text
+      - name: categoria
+        label: Categoría
+        type: string
+        options:
+          values:
+            - IA Reputation
+            - Visibilidad algorítmica & GEO
+            - Ética de la IA
+            - Reputación de marca
+            - Relaciones Públicas
+            - Storytelling
+            - Comunicación
+      - name: date
+        label: Fecha de publicación
+        type: date
+        options:
+          format: yyyy-MM-dd
+      - name: keywords
+        label: Palabras clave (separadas por coma)
+        type: string
+      - name: cover
+        label: Imagen de portada
+        type: image
+      - name: coverAlt
+        label: Descripción de la imagen (para accesibilidad y SEO)
+        type: string
+      - name: body
+        label: Contenido del artículo
+        type: rich-text

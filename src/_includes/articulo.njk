@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }} | {{ site.nombre }}</title>
+  <meta name="description" content="{{ description }}" />
+  <meta name="author" content="{{ site.autor }}" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="{{ title }}" />
+  <meta property="og:description" content="{{ description }}" />
+  <meta property="og:image" content="{{ site.url }}{{ cover }}" />
+  <meta property="article:author" content="{{ site.autor }}" />
+  <meta property="article:published_time" content="{{ page.date | fechaISO }}" />
+
+  <link rel="stylesheet" href="/styles.css" />
+
+  <!-- Datos estructurados: Articulo (clave para GEO / citacion por IA) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": {{ title | dump | safe }},
+    "description": {{ description | dump | safe }},
+    "image": {{ (site.url + cover) | dump | safe }},
+    "datePublished": "{{ page.date | fechaISO }}",
+    "dateModified": "{{ page.date | fechaISO }}",
+    "inLanguage": "es",
+    "articleSection": {{ categoria | dump | safe }},
+    "keywords": {{ keywords | dump | safe }},
+    "author": {
+      "@type": "Person",
+      "name": "{{ site.autor }}",
+      "jobTitle": "Especialista en Inteligencia Artificial y Comunicacion",
+      "url": "{{ site.autorUrl }}"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ site.nombre }}",
+      "url": "{{ site.url }}/"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ site.url }}{{ page.url }}"
+    }
+  }
+  </script>
+
+  <!-- Migas de pan (breadcrumbs) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "{{ site.url }}/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "{{ site.url }}/blog.html" },
+      { "@type": "ListItem", "position": 3, "name": {{ title | dump | safe }}, "item": "{{ site.url }}{{ page.url }}" }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="/index.html" class="logo">Brand<span> </span>Reputation</a>
+      <nav class="nav__links">
+        <a href="/index.html#servicios">Servicios</a>
+        <a href="/cursos.html">Capacitaciones</a>
+        <a href="/milagros-oreja.html">Directora</a>
+        <a href="/blog.html">Blog</a>
+        <button class="btn btn--ghost" data-open-form>Contacto</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="article-wrap">
+      <p class="article-cat">{{ categoria }}</p>
+      <h1 class="article-title">{{ title }}</h1>
+      <div class="article-meta">
+        <span>Por <strong>{{ site.autor }}</strong></span>
+        <span>&middot;</span>
+        <span>{{ page.date | fechaLarga }}</span>
+        <span>&middot;</span>
+        <span>{{ content | minutosLectura }} min de lectura</span>
+      </div>
+
+      {% if cover %}
+      <img class="article-cover" src="{{ cover }}" alt="{{ coverAlt or title }}" />
+      {% endif %}
+
+      <div class="article-body">
+        {{ content | safe }}
+      </div>
+
+      <a href="/blog.html" class="article-back">&larr; Volver al blog</a>
+    </article>
+
+    <!-- CTA -->
+    <section class="cta">
+      <h2 class="cta__title">&iquest;Hablamos de <span class="ital">tu marca?</span></h2>
+      <p class="cta__sub">Construyamos tu reputaci&oacute;n en el mundo humano y en el algor&iacute;tmico.</p>
+      <button class="btn btn--primary" data-open-form>Solicitar informaci&oacute;n</button>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span class="logo logo--small">Brand<span> </span>Reputation</span>
+    <p>&copy; 2026 Brand Reputation &middot; Relaciones P&uacute;blicas + Inteligencia Artificial</p>
+  </footer>
+
+  <!-- MODAL FORMULARIO -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal__overlay" data-close-form></div>
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal__close" data-close-form aria-label="Cerrar">&times;</button>
+      <h2 class="modal__title" id="modalTitle">Hablemos.</h2>
+      <p class="modal__sub">D&eacute;janos tus datos y te contactamos en menos de 24 horas.</p>
+      <form class="form" id="contactForm">
+        <label><span>Nombre</span><input type="text" name="nombre" required placeholder="Tu nombre" /></label>
+        <label><span>Correo</span><input type="email" name="email" required placeholder="tu@correo.com" /></label>
+        <label><span>Empresa</span><input type="text" name="empresa" placeholder="Tu marca o empresa" /></label>
+        <label><span>Mensaje</span><textarea name="mensaje" rows="3" placeholder="Cu&eacute;ntanos tu objetivo"></textarea></label>
+        <button type="submit" class="btn btn--primary btn--full">Enviar</button>
+        <p class="form__success" id="formSuccess">Gracias. Hemos recibido tu mensaje.</p>
+      </form>
+    </div>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+</html>
