@@ -1,7 +1,6 @@
 module.exports = function (eleventyConfig) {
   // Las paginas estaticas (.html) se copian TAL CUAL, sin procesar.
   // Asi nunca se rompe nada de lo que ya esta hecho a mano.
-  eleventyConfig.addPassthroughCopy("src/index.html");
   eleventyConfig.addPassthroughCopy("src/milagros-oreja.html");
   eleventyConfig.addPassthroughCopy("src/cursos.html");
 
@@ -10,6 +9,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/script.js");
   eleventyConfig.addPassthroughCopy("src/favicon.svg");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
+  eleventyConfig.addPassthroughCopy("src/llms.txt");
 
   // Imagenes: las que ya estan en la raiz y las que suba el panel (carpeta img)
   eleventyConfig.addPassthroughCopy("src/*.webp");
