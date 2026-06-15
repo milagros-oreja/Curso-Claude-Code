@@ -1,25 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&display=swap');
-
 /* ===========================================================
-   BRAND REPUTATION — Sistema de diseño "Editorial cálido"
-   Blanco dominante · negro profundo · acento terracota ("hilo")
-   Titulares serif de alto contraste (Fraunces) · cuerpo sans
+   BRAND REPUTATION — Sistema de diseño "Helvetica + fluo"
+   Blanco dominante · negro profundo · Helvetica bold
+   Acentos fluo: amarillo, rojo y morado
    =========================================================== */
 
 :root {
   --white: #ffffff;
-  --paper: #faf6f0;      /* off-white cálido para secciones alternas */
-  --paper-2: #f4ede3;    /* crema un punto más intenso */
-  --ink: #1a1714;        /* negro cálido profundo */
-  --gray: #6f6760;       /* gris cálido (cuerpo secundario) */
-  --gray-2: #9a9189;     /* gris más claro (metadatos) */
-  --line: #e8e0d5;       /* hairline cálido */
-  --accent: #bf5a36;     /* terracota "hilo" */
-  --accent-dark: #a4492a;
-  --accent-soft: #f3e3d8;
+  --paper: #f6f6f4;      /* gris muy claro neutro */
+  --paper-2: #eceae6;
+  --ink: #0e0e10;        /* negro profundo */
+  --gray: #5f5d5a;
+  --gray-2: #97948f;
+  --line: #e6e4e0;
+  --yellow: #ffe600;     /* amarillo fluo */
+  --red: #ff2b2b;        /* rojo fluo */
+  --purple: #7c3aed;     /* morado fluo */
+  --accent: #ff2b2b;     /* acento principal (rojo) */
+  --accent-dark: #d91f1f;
+  --accent-soft: #ffe1e1;
   --max: 1120px;
   --measure: 720px;      /* ancho de lectura */
-  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --serif: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
   --sans: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
 }
 
@@ -291,7 +292,7 @@ img { max-width: 100%; display: block; }
 /* ===== Qué hago — 4 niveles ===== */
 .levels {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 36px;
   margin-top: 44px;
 }
@@ -844,3 +845,16 @@ img { max-width: 100%; display: block; }
   .hero { padding: 80px 24px 70px; }
   .section { padding: 72px 0; }
 }
+
+/* ===========================================================
+   Ajuste de marca: Helvetica bold + acentos fluo
+   =========================================================== */
+.hero__title,.section__title,.cta__title,.article-title,.bio-hero__name,.modal__title{font-weight:800;letter-spacing:-0.035em;line-height:1.02;}
+.acc__title,.card h3,.level h3,.result-col h3,.route-card__title,.faq summary,.stat__num,.quote,.logo,.logo--small,.acc-intro h3,.footer .logo{font-weight:700;letter-spacing:-0.02em;}
+.science p{font-weight:500;}
+.science em{color:var(--yellow);font-style:normal;font-weight:700;}
+.ital{font-style:normal;font-weight:800;color:var(--red);}
+.hl-y{background:linear-gradient(transparent 58%, var(--yellow) 58%);font-weight:700;padding:0 .05em;}
+.hl-p{color:var(--purple);font-weight:800;}
+.level__step{color:var(--purple);font-style:normal;font-weight:800;font-size:18px;}
+.stats .stat:nth-child(2) .stat__num{color:var(--purple);}
