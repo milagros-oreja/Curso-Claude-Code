@@ -589,12 +589,15 @@ img { max-width: 100%; display: block; }
   margin-bottom: 44px;
 }
 .logo-chip {
-  font-size: 15px;
-  color: var(--gray-2);
-  border: 1px dashed var(--line);
-  border-radius: 12px;
-  padding: 16px 26px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray);
+  border: 1px solid var(--line);
+  border-radius: 980px;
+  padding: 8px 16px;
+  transition: color 0.2s, border-color 0.2s;
 }
+.logo-chip:hover { color: var(--ink); border-color: var(--ink); }
 .quote {
   font-family: var(--serif);
   font-weight: 400;
