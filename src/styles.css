@@ -855,9 +855,8 @@ img { max-width: 100%; display: block; }
 .hero__title,.section__title,.cta__title,.article-title,.bio-hero__name,.modal__title{font-weight:800;letter-spacing:-0.035em;line-height:1.02;}
 .acc__title,.card h3,.level h3,.result-col h3,.route-card__title,.faq summary,.stat__num,.quote,.logo,.logo--small,.acc-intro h3,.footer .logo{font-weight:700;letter-spacing:-0.02em;}
 .science p{font-weight:500;}
-.science em{color:var(--yellow);font-style:normal;font-weight:700;}
+.science em{color:var(--red);font-style:normal;font-weight:700;}
 .ital{font-style:normal;font-weight:800;color:var(--red);}
-.hl-y{background:linear-gradient(transparent 58%, var(--yellow) 58%);font-weight:700;padding:0 .05em;}
-.hl-p{color:var(--purple);font-weight:800;}
-.level__step{color:var(--purple);font-style:normal;font-weight:800;font-size:18px;}
-.stats .stat:nth-child(2) .stat__num{color:var(--purple);}
+.hl-y{font-weight:700;}
+.hl-p{font-weight:800;}
+.level__step{color:var(--red);font-style:normal;font-weight:800;font-size:18px;}
