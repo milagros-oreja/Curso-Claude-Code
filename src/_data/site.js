@@ -1,6 +1,6 @@
 module.exports = {
-  nombre: "Brand Reputation",
+  nombre: "BRCOM",
   url: "https://agenciabrcom.com",
-  autor: "Milagros Oreja",
+  autor: "Ana Milagros Oreja",
   autorUrl: "https://agenciabrcom.com/milagros-oreja.html",
 };
