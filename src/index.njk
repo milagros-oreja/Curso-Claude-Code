@@ -7,14 +7,14 @@ eleventyExcludeFromCollections: true
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BRCOM × Polister — Comunicación Audience-First</title>
-  <meta name="description" content="BRCOM × Polister es una consultora de comunicación estratégica e inteligencia de reputación. Investigamos qué moviliza a tu audiencia y lo traducimos en reputación, narrativa y posicionamiento, ante audiencias humanas y sistemas de IA. Reputación basada en evidencia." />
+  <title>BRCOM — Comunicación Audience-First</title>
+  <meta name="description" content="BRCOM es una consultora de comunicación estratégica e inteligencia de reputación. Investigamos qué moviliza a tu audiencia y lo traducimos en reputación, narrativa y posicionamiento, ante audiencias humanas y sistemas de IA. Reputación basada en evidencia." />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="canonical" href="{{ site.url }}/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="BRCOM × Polister — Comunicación Audience-First" />
+  <meta property="og:title" content="BRCOM — Comunicación Audience-First" />
   <meta property="og:description" content="Human Connection. Algorithmic Visibility. Reputación basada en evidencia." />
   <meta property="og:image" content="{{ site.url }}/b6efcca8618a390494e805f83e0af595.webp" />
   <meta property="og:url" content="{{ site.url }}/" />
@@ -27,7 +27,7 @@ eleventyExcludeFromCollections: true
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "BRCOM",
-    "alternateName": "BRCOM × Polister",
+    "alternateName": "Comunicación Audience-First",
     "url": "{{ site.url }}/",
     "email": "milagros@brcom.mx",
     "slogan": "Human Connection. Algorithmic Visibility.",
@@ -68,8 +68,8 @@ eleventyExcludeFromCollections: true
       <nav class="nav__links">
         <a href="#firma">Quiénes somos</a>
         <a href="#metodo">Cómo trabajamos</a>
-        <a href="#pilares">Pilares</a>
-        <a href="#formacion">Formación</a>
+        <a href="#fundadora">Fundadora</a>
+        <a href="#clientes">Clientes</a>
         <a href="#contacto" class="btn btn--primary">Hablemos</a>
       </nav>
     </div>
@@ -80,7 +80,7 @@ eleventyExcludeFromCollections: true
     <!-- [1] HERO -->
     <section class="hero">
       <div class="hero__inner">
-        <p class="hero__kicker">BRCOM × Polister · Comunicación Audience-First</p>
+        <p class="hero__kicker">BRCOM · Comunicación Audience-First</p>
         <h1 class="hero__title">Comunicación <span class="ital">Audience-First.</span></h1>
         <p class="hero__sub">
           Investigamos qué moviliza a tu audiencia —lo que valora, lo que teme, en qué deposita su confianza—
@@ -551,6 +551,97 @@ eleventyExcludeFromCollections: true
       </div>
     </section>
 
+    <!-- [13b] LA FUNDADORA -->
+    <section class="section" id="fundadora">
+      <div class="wrap">
+        <div class="about-grid">
+          <img class="about__photo" src="/milagros-oreja.jpg" alt="Ana Milagros Oreja, fundadora de BRCOM" onerror="this.style.display='none'" />
+          <div>
+            <p class="eyebrow">La fundadora</p>
+            <h2 class="section__title" style="margin-bottom:18px;">Ana Milagros <span class="ital">Oreja.</span></h2>
+            <div class="about__text">
+              <p>Estratega en comunicación, <em>brand intelligence</em> y reputación. Fundadora y directora de
+              <strong>BRCOM</strong>, con más de 20 años en América Latina construyendo y protegiendo la
+              confianza y la reputación: une la escucha estratégica e inteligencia de audiencias con la
+              gestión de reputación y comunicación.</p>
+              <p>Un hilo central de su trabajo es la colaboración de largo plazo con organismos internacionales y
+              fondos en derechos digitales e interés público —Fundación Avina, Open Society, Ford, Friedrich Naumann,
+              Gates, BID y FMI—, junto a campañas de marca premiadas (SABRE Latinoamérica, Stevie Awards), gestión de
+              crisis y formación en medios, storytelling y oratoria.</p>
+            </div>
+            <a href="/milagros-oreja.html" class="btn btn--outline" style="margin-top:8px;">Conocer la trayectoria completa</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- [13c] CLIENTES & ORGANIZACIONES (carrusel por sectores) -->
+    {% macro logos(list) %}{% for c in list %}<div class="logo-slide{% if not c.d %} no-logo{% endif %}">{% if c.d %}<img src="https://logo.clearbit.com/{{ c.d }}" alt="{{ c.n }}" loading="lazy" onerror="this.closest('.logo-slide').classList.add('no-logo')" />{% endif %}<span class="logo-slide__name">{{ c.n }}</span></div>{% endfor %}{% endmacro %}
+
+    {% set marcas = [
+      {n:"Roche", d:"roche.com"}, {n:"Unilever", d:"unilever.com"}, {n:"Airbnb", d:"airbnb.com"},
+      {n:"Meta", d:"meta.com"}, {n:"Warner Bros.", d:"warnerbros.com"}, {n:"Dyson", d:"dyson.com"},
+      {n:"Grupo Bimbo", d:"grupobimbo.com"}, {n:"Nestlé", d:"nestle.com"}, {n:"Coca-Cola", d:"coca-cola.com"},
+      {n:"Shell", d:"shell.com"}, {n:"José Cuervo", d:"cuervo.com"}, {n:"The Macallan", d:"themacallan.com"},
+      {n:"The Glenrothes", d:"theglenrothes.com"}, {n:"Edrington", d:"edrington.com"}, {n:"Brugal", d:"brugal.com"},
+      {n:"Sanofi", d:"sanofi.com"}, {n:"Boehringer", d:"boehringer-ingelheim.com"}, {n:"Nielsen", d:"nielsen.com"},
+      {n:"Jüsto", d:"justo.mx"}, {n:"Bioelements", d:"bioelements.com"}, {n:"Pura", d:""},
+      {n:"PelletMX", d:""}, {n:"Testfarma", d:""}, {n:"Postales de Café", d:""}
+    ] %}
+    {% set startups = [
+      {n:"Stori", d:"storicard.com"}, {n:"Conekta", d:"conekta.com"}, {n:"Platzi", d:"platzi.com"},
+      {n:"Endeavor", d:"endeavor.org"}, {n:"New Ventures", d:""}, {n:"Unreasonable México", d:"unreasonable.is"},
+      {n:"Konfío", d:"konfio.mx"}, {n:"Koibanx", d:"koibanx.com"}, {n:"Xcapit", d:"xcapit.com"},
+      {n:"Fintonic", d:"fintonic.com"}, {n:"Etpay", d:"etpay.com"}, {n:"Voom", d:""},
+      {n:"Vopero", d:"vopero.com"}, {n:"Treggo", d:""}, {n:"Laudex", d:""}, {n:"Comunal", d:""},
+      {n:"Clearsale", d:"clearsale.com.br"}, {n:"Sinnetic", d:"sinnetic.com"}, {n:"Altered Ventures", d:""},
+      {n:"The Uncommon Lab", d:""}, {n:"Luuna", d:"luuna.mx"}
+    ] %}
+    {% set organismos = [
+      {n:"FMI", d:"imf.org"}, {n:"BID", d:"iadb.org"}, {n:"Unión Europea", d:"europa.eu"},
+      {n:"UNICEF", d:"unicef.org"}, {n:"Imaginarius", d:""}, {n:"Open Society", d:"opensocietyfoundations.org"},
+      {n:"Ford Foundation", d:"fordfoundation.org"}, {n:"Gates Foundation", d:"gatesfoundation.org"},
+      {n:"Friedrich Naumann Foundation", d:"freiheit.org"}, {n:"IKEA Foundation", d:"ikeafoundation.org"},
+      {n:"Article 19", d:"article19.org"}, {n:"ALAI", d:""}, {n:"Luchadoras", d:"luchadoras.mx"},
+      {n:"Indela", d:""}, {n:"Pulsante", d:""}, {n:"Surge", d:""}, {n:"Luminate", d:"luminategroup.com"},
+      {n:"IPANDETEC", d:"ipandetec.org"}, {n:"Democracia en Red", d:"democraciaenred.org"},
+      {n:"Balloon Latam", d:""}, {n:"Red de Innovación Local", d:""}, {n:"Fundación Avina", d:"avina.net"}
+    ] %}
+    {% set gobierno = [
+      {n:"Cámara de Diputados de México", d:"diputados.gob.mx"}, {n:"Gobierno de la Ciudad de Buenos Aires", d:"buenosaires.gob.ar"},
+      {n:"Min. de Ciencia y Tecnología · Argentina", d:"argentina.gob.ar"}, {n:"Presidencia de Argentina", d:"casarosada.gob.ar"},
+      {n:"UNAM", d:"unam.mx"}, {n:"CCU Tlatelolco", d:""}, {n:"Universidad Anáhuac Puebla", d:"anahuac.mx"},
+      {n:"Alcaldía Benito Juárez", d:""}, {n:"Comisión de DH · CDMX", d:"cdhcm.org.mx"}, {n:"Comisión de DH de México", d:"cndh.org.mx"}
+    ] %}
+
+    <section class="section section--paper" id="clientes">
+      <div class="wrap">
+        <p class="eyebrow">Proyectos y marcas</p>
+        <h2 class="section__title">Clientes &amp; <span class="ital">organizaciones.</span></h2>
+        <p class="section__lead">Más de 65 clientes en marcas, startups, gobiernos, ONG y organismos internacionales de América Latina y el mundo.</p>
+      </div>
+
+      <div class="clients__sector">
+        <div class="wrap"><p class="clients__label">Marcas corporativas y de consumo</p></div>
+        <div class="marquee"><div class="marquee__track">{{ logos(marcas) }}{{ logos(marcas) }}</div></div>
+      </div>
+
+      <div class="clients__sector">
+        <div class="wrap"><p class="clients__label">Startups, fintech e innovación</p></div>
+        <div class="marquee marquee--reverse"><div class="marquee__track">{{ logos(startups) }}{{ logos(startups) }}</div></div>
+      </div>
+
+      <div class="clients__sector">
+        <div class="wrap"><p class="clients__label">Organismos internacionales, fundaciones y multilaterales</p></div>
+        <div class="marquee"><div class="marquee__track">{{ logos(organismos) }}{{ logos(organismos) }}</div></div>
+      </div>
+
+      <div class="clients__sector">
+        <div class="wrap"><p class="clients__label">Gobierno, academia y alianzas</p></div>
+        <div class="marquee marquee--reverse"><div class="marquee__track">{{ logos(gobierno) }}{{ logos(gobierno) }}</div></div>
+      </div>
+    </section>
+
     <!-- [14] CONTACTO -->
     <section class="section" id="contacto">
       <div class="wrap">
@@ -600,7 +691,7 @@ eleventyExcludeFromCollections: true
         <a href="https://www.linkedin.com/in/milagros-oreja" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
-    <div class="footer__bottom">© 2026 BRCOM × Polister · Comunicación Audience-First</div>
+    <div class="footer__bottom">© 2026 BRCOM · Comunicación Audience-First</div>
   </footer>
 
   <script src="/script.js"></script>
